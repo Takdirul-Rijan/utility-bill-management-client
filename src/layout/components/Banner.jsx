@@ -95,8 +95,8 @@ const Banner = () => {
 
       <div id="slide4" className="carousel-item relative w-full">
         <img
-          src="https://blog.hitch.zone/wp-content/uploads/2025/03/freepik__expand__77042.png"
-          className="w-full h-full object-contain"
+          src="https://www.originenergy.com.au/blog/wp-content/uploads/10-easy-ways-to-reduce-your-energy-bill-Blog-banner-1600x900-1-scaled.jpg"
+          className="w-full h-full object-center"
           alt="Electricity Bill"
         />
         <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center text-white px-5">

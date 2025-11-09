@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Electricity",
+    "image": "https://img.icons8.com/color/96/electricity.png",
+    "bg": "bg-yellow-200"
+  },
+  {
+    "id": 2,
+    "name": "Gas",
+    "image": "https://img.icons8.com/color/96/gas.png",
+    "bg": "bg-red-200"
+  },
+  {
+    "id": 3,
+    "name": "Water",
+    "image": "https://img.icons8.com/color/96/water.png",
+    "bg": "bg-blue-200"
+  },
+  {
+    "id": 4,
+    "name": "Internet",
+    "image": "https://img.icons8.com/color/96/wifi.png",
+    "bg": "bg-purple-200"
+  }
+]
