@@ -16,9 +16,12 @@ const RecentBills = () => {
 
   if (loading) {
     return (
-      <span className="text-center py-10 loading loading-ball loading-xl"></span>
+      <div className="flex items-center justify-center min-h-screen">
+        <span className="loading loading-ball loading-xl"></span>
+      </div>
     );
   }
+
   return (
     <div>
       <section className="py-12 bg-gray-100">

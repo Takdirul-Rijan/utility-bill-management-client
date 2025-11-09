@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import HomeLayout from "../layout/HomeLayout";
 import Home from "../pages/Home";
+import BillDetails from "../pages/BillDetails";
 
 const router = createBrowserRouter([
   {
@@ -11,6 +12,12 @@ const router = createBrowserRouter([
         index: true,
         element: <Home></Home>,
         loader: () => fetch("/category.json"),
+      },
+      {
+        path: "/bill-details/:id",
+        element: <BillDetails></BillDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/bills/${params.id}`),
       },
     ],
   },
