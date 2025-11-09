@@ -2,7 +2,7 @@ import React from "react";
 import { useLoaderData } from "react-router";
 
 const CategoryCard = () => {
-  const categories = useLoaderData();
+  const categories = useLoaderData("/category.json");
   // console.log(categories);
 
   return (

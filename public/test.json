@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Frequent Power Outage in Mirpur",
+    "category": "Electricity",
+    "email": "creator.mirpur@example.com",
+    "location": "Mirpur-10, Dhaka",
+    "description": "Over the last month Mirpur-10 residents have experienced daily power interruptions.\nOutages typically occur between 7:00 PM and 11:00 PM, affecting lighting and home appliances.\nMany households report sensitive electronics being damaged due to abrupt voltage drops.\nLocal businesses face revenue loss during peak evening hours when store traffic is highest.\nResidents have filed repeated complaints with the utility but improvements have been intermittent.",
+    "image": "https://img.freepik.com/free-vector/hand-drawn-flat-design-power-outage-illustration_23-2149251909.jpg?semt=ais_hybrid&w=740&q=80",
+    "date": "2025-10-26",
+    "amount": 260
+  },
+  {
+    "title": "Gas Supply Fluctuation in Dhanmondi",
+    "category": "Gas",
+    "email": "dhana.gas.report@example.com",
+    "location": "Dhanmondi, Dhaka",
+    "description": "Several apartment complexes in Dhanmondi report low gas pressure at peak hours.\nHouseholds are unable to cook during morning and evening rush times because burners fail to ignite properly.\nMaintenance crews have been seen at main regulators, but the issue recurs after a few days.\nTenants are concerned about safety due to repeated pilot light problems and risk of incomplete combustion.\nCommunity leaders are requesting a permanent regulator upgrade from the gas company.",
+    "image": "https://img.freepik.com/premium-vector/modern-gas-burner-with-blue-flame-isolated-dark-transparent-background-front-view-gas-burner-ring-realistic-burner-propane-butane-oven-element-vector-illustration_341509-3033.jpg?semt=ais_hybrid&w=740&q=80",
+    "date": "2025-11-03",
+    "amount": 480
+  },
+  {
+    "title": "Contaminated Tap Water in Uttara Sector 6",
+    "category": "Water",
+    "email": "uttara.water.alert@example.com",
+    "location": "Uttara Sector 6, Dhaka",
+    "description": "Residents noticed brownish discoloration and unusual odor in tap water for several days.\nFamilies have avoided using tap water for drinking and report increased use of bottled water.\nLocal health posts logged cases of stomach upset possibly linked to water quality.\nMunicipal crews shut off supply temporarily to flush the main lines and promised testing results.\nCitizens are demanding timely public reports and corrective infrastructure work for lines and treatment.",
+    "image": "https://images.contentstack.io/v3/assets/bltf1dd6317cb2088d3/bltea4aa37c3aeb33b3/62a01f0ed0f3ca0f53e0c26b/What_causes_contaminated_water.jpg",
+    "date": "2025-09-18",
+    "amount": 150
+  },
+  {
+    "title": "Slow Broadband and Frequent Disconnects - Gulshan",
+    "category": "Internet",
+    "email": "gulshan.tech@example.com",
+    "location": "Gulshan-2, Dhaka",
+    "description": "Office workers in Gulshan experience persistent slow speeds during business hours.\nVideo conferences drop repeatedly, affecting remote meetings and client calls.\nMultiple users report technician visits but intermittent restoration only lasts a day or two.\nBusinesses dependent on cloud services incur lost time and missed deadlines.\nCustomers are asking the ISP for SLA enforcement or a plan upgrade to resolve congestion.",
+    "image": "https://www.thinkbroadband.com/assets/media/2024/03/slow-broadband-snail.jpg",
+    "date": "2025-11-01",
+    "amount": 750
+  },
+  {
+    "title": "Transformer Failure Causes Blackout - Khulna Road",
+    "category": "Electricity",
+    "email": "khulna.issues@example.com",
+    "location": "Khulna Road, Khulna",
+    "description": "A transformer failure on Khulna Road caused an extended blackout affecting a wide area.\nEmergency services and traffic signals were disrupted for several hours during the incident.\nRepair crews replaced damaged components but full stabilization took the better part of the day.\nLocal merchants suffered losses as refrigerated goods spoiled without power.\nOfficials posted an incident report and scheduled an inspection of nearby substations.",
+    "image": "https://thumbs.dreamstime.com/b/power-outage-caused-burning-transformer-exploding-line-sunset-377032249.jpg",
+    "date": "2025-08-09",
+    "amount": 340
+  },
+  {
+    "title": "High Water Bill After Meter Replacement - Narayanganj",
+    "category": "Water",
+    "email": "narayanganj.consumer@example.com",
+    "location": "Narayanganj Sadar, Narayanganj",
+    "description": "Several households received unexpectedly high water bills after a recent meter swap.\nResidents assert consumption patterns did not change—no extra guests or new appliances.\nMeter calibration checks were requested but community reports slow administrative response.\nConsumers worry about estimated readings and want transparent meter verification.\nA local consumer group plans to file a formal appeal with municipal water authorities.",
+    "image": "https://cdn.prod.website-files.com/6782552d767307f9f8a3d3a3/68b3dc679b501c07543d90af_water-bill-high-for-no-reason.jpeg",
+    "date": "2025-07-21",
+    "amount": 620
+  },
+  {
+    "title": "Internet Outage During Online Exams - Rajshahi University Area",
+    "category": "Internet",
+    "email": "rajshahi.itdesk@example.com",
+    "location": "Shah Makhdum, Rajshahi",
+    "description": "Students faced ISP outage during scheduled online exams leading to missed submissions.\nExamination authorities received many late-penalty appeals because of connectivity loss.\nThe ISP blamed backbone maintenance but provided no prior notice to educational institutions.\nCalls for compensation or make-up exams have been submitted to both university and ISP.\nStakeholders request a reliable alternate link or better outage notification procedures.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzxVb3XktFktrClj8HLxxtSU6awmWY2PG2MQ&s",
+    "date": "2025-06-14",
+    "amount": 300
+  },
+  {
+    "title": "Cooking Gas Leak Reported in Mirzapur",
+    "category": "Gas",
+    "email": "mirzapur.safety@example.com",
+    "location": "Mirzapur, Tangail",
+    "description": "A suspected domestic gas leak prompted an emergency response from the local gas office.\nNeighbors reported the smell of gas and the family evacuated until technicians arrived.\nTechnicians detected a loose regulator fitting and replaced the faulty connector.\nOfficials advised periodic safety checks and distributed leaflets on gas-safety practices.\nFollow-up inspections were scheduled to ensure corrections and prevent repeat incidents.",
+    "image": "https://images.serviceteam.co.uk/wp-content/uploads/2023/09/07083936/Detecting-a-Gas-Leak-at-Home-serviceteam.webp",
+    "date": "2025-10-05",
+    "amount": 95
+  },
+  {
+    "title": "Rising Electricity Tariff Confusion - Old Dhaka",
+    "category": "Electricity",
+    "email": "olddhaka.billing@example.com",
+    "location": "Old Dhaka, Dhaka",
+    "description": "Residents received bills reflecting a new tariff slab that many did not expect.\nCommunity leaders say the tariff notice was not clearly communicated in local language.\nSmall shopkeepers are particularly concerned about increased monthly operating costs.\nRequests for a detailed bill breakdown and tariff FAQ were sent to the utility office.\nA public meeting with utility representatives has been proposed to clarify charges.",
+    "image": "https://tds-images.thedailystar.net/sites/default/files/styles/big_201/public/images/2024/05/12/ed_1_-_electricity_price_hike_-_badhon.jpg",
+    "date": "2025-11-05",
+    "amount": 1020
+  },
+  {
+    "title": "Intermittent Water Pressure After Roadwork - Barishal",
+    "category": "Water",
+    "email": "barishal.waterline@example.com",
+    "location": "Barishal Sadar, Barishal",
+    "description": "Road reconstruction disturbed an old water main leading to inconsistent pressure.\nSome households experience high pressure bursts while others report barely any flow.\nMunicipal teams are coordinating to locate weakened joints and replace damaged sections.\nSchools and clinics in the area requested priority restoration to maintain services.\nA timeline for phased repairs was published to keep the public informed and reduce anxiety.",
+    "image": "https://www.longfordleader.ie/resizer/640/-1/true/2025_03_31/Uisce_Eireann_Crew_%281%29-1743430375267.jpg--uisce_eireann_crews_working_to_repair_burst_water_main_in_granard.jpg?1743430378254",
+    "date": "2025-04-30",
+    "amount": 210
+  },
+  {
+    "title": "Fiber Cut During Construction Causes Internet Downtime - Sylhet",
+    "category": "Internet",
+    "email": "sylhet.networkops@example.com",
+    "location": "Sylhet Sadar, Sylhet",
+    "description": "Construction crews accidentally severed a fiber backbone causing region-wide downtime.\nRepair required specialized splicing teams and spare parts which took several hours to arrive.\nLocal businesses and remote workers experienced prolonged disruption in connectivity.\nThe ISP offered temporary mobile hotspot credits to affected customers as a goodwill gesture.\nAnti-digging protocols are being reviewed to avoid similar future infrastructure damage.",
+    "image": "https://www.commercialelectronics.com/wp-content/uploads/2022/02/fiber-optic-cable-cuts-featured-image.jpg",
+    "date": "2025-03-12",
+    "amount": 410
+  },
+  {
+    "title": "Emergency Generator Reliance Raises Electricity Costs - Cox's Bazar",
+    "category": "Electricity",
+    "email": "coxs.powerwatch@example.com",
+    "location": "Cox's Bazar, Cox's Bazar",
+    "description": "Frequent grid instability forced several hotels to run backup generators regularly.\nGenerator fuel consumption significantly increased monthly energy bills for businesses.\nTourist-season demand amplifies the financial impact on small guesthouses operating tight margins.\nOperators request grid stabilization and prioritized infrastructure investment for the region.\nA collaborative meeting between hoteliers and power authorities is being arranged.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwjW-BOkxilaF_YYnDZdi1CBirrmFubWYLvg&s",
+    "date": "2025-02-19",
+    "amount": 1340
+  }
+]

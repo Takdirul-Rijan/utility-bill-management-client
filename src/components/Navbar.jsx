@@ -1,3 +1,4 @@
+import React from "react";
 import { Link, NavLink } from "react-router";
 
 const Navbar = () => {
@@ -39,7 +40,6 @@ const Navbar = () => {
       </li>
     </>
   );
-
   return (
     <header className="py-3 sticky top-0 z-50 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 backdrop-blur-lg shadow-lg">
       <nav className="w-11/12 mx-auto">
@@ -62,7 +62,7 @@ const Navbar = () => {
               </svg>
             </div>
             <span className="text-xl font-extrabold text-white tracking-tight drop-shadow">
-              Utility<span className="text-yellow-300">Pay</span>
+              Smart<span className="text-yellow-300">BillHub</span>
             </span>
           </Link>
 

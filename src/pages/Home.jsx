@@ -1,12 +1,14 @@
 import React from "react";
-import Banner from "../layout/components/Banner";
-import CategoryCard from "../layout/components/CategoryCard";
+import Banner from "../components/Banner";
+import CategoryCard from "../components/CategoryCard";
+import RecentBills from "./RecentBills";
 
 const Home = () => {
   return (
     <div>
       <Banner></Banner>
       <CategoryCard></CategoryCard>
+      <RecentBills></RecentBills>
     </div>
   );
 };
