@@ -1,7 +1,13 @@
-import React from "react";
-import reviews from "../../public/reviews.json";
+import React, { useEffect, useState } from "react";
 
 const Testimonials = () => {
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    fetch("/reviews.json")
+      .then((res) => res.json())
+      .then((data) => setReviews(data));
+  }, []);
   return (
     <section className="py-12 bg-gradient-to-r from-indigo-50 to-purple-50">
       <div className="container mx-auto px-4">

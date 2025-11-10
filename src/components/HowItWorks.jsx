@@ -1,8 +1,13 @@
-import React from "react";
-
-import steps from "../../public/steps.json";
+import React, { useEffect, useState } from "react";
 
 const HowItWorks = () => {
+  const [steps, setSteps] = useState([]);
+
+  useEffect(() => {
+    fetch("/steps.json")
+      .then((res) => res.json())
+      .then((data) => setSteps(data));
+  }, []);
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
