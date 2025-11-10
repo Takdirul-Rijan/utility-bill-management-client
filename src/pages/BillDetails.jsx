@@ -34,10 +34,10 @@ const BillDetails = () => {
             <p className="flex items-center gap-1">
               <CiLocationOn /> {bill.location}
             </p>
-            <p className="flex items-center gap-1">
+            <p className="flex items-center gap-2">
               <SlCalender /> {new Date(bill.date).toLocaleDateString()}
             </p>
-            <p className="flex items-center gap-1">
+            <p className="flex items-center gap-2">
               <FaSackDollar />
 
               <span className="font-semibold text-gray-700">

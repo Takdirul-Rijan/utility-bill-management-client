@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import BillsCard from "../components/BillsCard";
+import { PacmanLoader, RiseLoader } from "react-spinners";
 
 const RecentBills = () => {
   const [bills, setBills] = useState([]);
@@ -17,7 +18,7 @@ const RecentBills = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <span className="loading loading-ball loading-xl"></span>
+        <RiseLoader />
       </div>
     );
   }

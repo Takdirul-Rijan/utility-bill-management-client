@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Browse Bills",
+    "desc": "Explore bills by category or recent listings."
+  },
+  {
+    "title": "See Details",
+    "desc": "Open a bill to view full details and amount."
+  },
+  {
+    "title": "Pay Current Month",
+    "desc": "Pay only if the bill date is within the current month."
+  }
+]
