@@ -3,19 +3,19 @@
     "id": 1,
     "name": "Electricity",
     "image": "https://img.icons8.com/color/96/electricity.png",
-    "bg": "bg-green-200"
+    "bg": "bg-purple-200"
   },
   {
     "id": 2,
     "name": "Gas",
     "image": "https://img.icons8.com/color/96/gas.png",
-    "bg": "bg-red-200"
+    "bg": "bg-purple-200"
   },
   {
     "id": 3,
     "name": "Water",
     "image": "https://img.icons8.com/color/96/water.png",
-    "bg": "bg-blue-200"
+    "bg": "bg-purple-200"
   },
   {
     "id": 4,
