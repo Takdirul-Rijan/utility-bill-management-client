@@ -6,6 +6,7 @@ import { SlCalender } from "react-icons/sl";
 import { Link, useLoaderData } from "react-router";
 import toast from "react-hot-toast";
 import { AuthContext } from "../provider/AuthProvider";
+import { TbCurrencyTaka } from "react-icons/tb";
 
 const BillDetails = () => {
   const bill = useLoaderData();
@@ -40,7 +41,7 @@ const BillDetails = () => {
     })
       .then((res) => res.json())
       .then(() => {
-        toast.success("Bill paid successfully!");
+        toast.success("Your bill has been paid successfully!");
         setIsModalOpen(false);
         form.reset();
       });
@@ -74,10 +75,11 @@ const BillDetails = () => {
             <p className="flex items-center gap-2">
               <SlCalender /> {new Date(bill.date).toLocaleDateString()}
             </p>
-            <p className="flex items-center gap-2">
+            <p className="flex items-center gap-1">
               <FaSackDollar />
-              <span className="font-semibold text-gray-700">
-                ${bill.amount}
+              <span className="flex items-center font-semibold text-gray-700">
+                <TbCurrencyTaka size={20}></TbCurrencyTaka>
+                <span>{bill.amount}</span>
               </span>
             </p>
           </div>

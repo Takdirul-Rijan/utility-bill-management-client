@@ -7,6 +7,7 @@ import AuthLayout from "../layout/AuthLayout";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import AllBills from "../pages/AllBills";
+import MyPayBills from "../pages/MyPayBills";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,14 @@ const router = createBrowserRouter([
       {
         path: "/all-bills",
         element: <AllBills></AllBills>,
+      },
+      {
+        path: "/my-pay-bills",
+        element: (
+          <PrivateRoute>
+            <MyPayBills></MyPayBills>,
+          </PrivateRoute>
+        ),
       },
       {
         path: "/bill-details/:id",
