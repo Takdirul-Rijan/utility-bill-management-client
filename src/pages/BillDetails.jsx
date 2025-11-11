@@ -12,23 +12,38 @@ const BillDetails = () => {
   const { user } = use(AuthContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // console.log("data:", bill);
-  // console.log(user);
-
   const today = new Date();
   const billDate = new Date(bill.date);
   const isCurrentMonth =
     today.getMonth() === billDate.getMonth() &&
     today.getFullYear() === billDate.getFullYear();
 
-  // console.log(billDate);
-
   const handlePayBill = (e) => {
     e.preventDefault();
+    const form = e.target;
 
-    toast.success("Bill paid successfully!");
-    setIsModalOpen(false);
-    e.target.reset();
+    const billData = {
+      email: form.email.value,
+      billId: form.billId.value,
+      amount: form.amount.value,
+      username: form.name.value,
+      address: form.address.value,
+      phone: form.phone.value,
+      date: form.date.value,
+      additional: form.additional.value,
+    };
+
+    fetch("http://localhost:3000/myBills", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(billData),
+    })
+      .then((res) => res.json())
+      .then(() => {
+        toast.success("Bill paid successfully!");
+        setIsModalOpen(false);
+        form.reset();
+      });
   };
 
   return (
@@ -152,6 +167,7 @@ const BillDetails = () => {
             <input
               name="phone"
               placeholder="Enter phone"
+              type="number"
               pattern="[0-9]+"
               required
               className="border w-full p-2 rounded"
