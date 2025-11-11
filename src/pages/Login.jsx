@@ -13,6 +13,8 @@ const Login = () => {
   const location = useLocation();
   // console.log("location", location);
 
+  const from = location.state?.from?.pathname || "/";
+
   const navigate = useNavigate();
 
   const [showPassword, setShowPassword] = useState(false);
@@ -37,14 +39,13 @@ const Login = () => {
         const user = result.user;
         // console.log(user);
 
-        navigate(`${location.state ? location.state : "/"}`);
+        navigate(from, { replace: true });
 
         Swal.fire({
           title: "Logged in successfully",
           icon: "success",
           draggable: true,
         });
-        <Navigate to={"/toy/:id"}></Navigate>;
         form.reset();
       })
       .catch((error) => {
@@ -70,7 +71,7 @@ const Login = () => {
           icon: "success",
           draggable: true,
         });
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         // console.log(error);
@@ -136,7 +137,11 @@ const Login = () => {
         </div>
         <p className="pt-5 text-center font-semibold">
           New to our platform?{" "}
-          <Link to={"/auth/register"} className="text-blue-400">
+          <Link
+            to={"/auth/register"}
+            state={{ from: location.state?.from || "/" }}
+            className="text-blue-400"
+          >
             Register
           </Link>
         </p>

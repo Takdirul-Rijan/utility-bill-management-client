@@ -1,13 +1,35 @@
-import React from "react";
+import React, { use, useState } from "react";
 import { CiLocationOn } from "react-icons/ci";
 import { FaSackDollar } from "react-icons/fa6";
 import { IoArrowBack } from "react-icons/io5";
 import { SlCalender } from "react-icons/sl";
 import { Link, useLoaderData } from "react-router";
+import toast from "react-hot-toast";
+import { AuthContext } from "../provider/AuthProvider";
 
 const BillDetails = () => {
   const bill = useLoaderData();
-  //   console.log(bill);
+  const { user } = use(AuthContext);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // console.log("data:", bill);
+  // console.log(user);
+
+  const today = new Date();
+  const billDate = new Date(bill.date);
+  const isCurrentMonth =
+    today.getMonth() === billDate.getMonth() &&
+    today.getFullYear() === billDate.getFullYear();
+
+  // console.log(billDate);
+
+  const handlePayBill = (e) => {
+    e.preventDefault();
+
+    toast.success("Bill paid successfully!");
+    setIsModalOpen(false);
+    e.target.reset();
+  };
 
   return (
     <section className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-12 px-4 md:px-10">
@@ -39,7 +61,6 @@ const BillDetails = () => {
             </p>
             <p className="flex items-center gap-2">
               <FaSackDollar />
-
               <span className="font-semibold text-gray-700">
                 ${bill.amount}
               </span>
@@ -55,19 +76,116 @@ const BillDetails = () => {
             </p>
           </div>
 
-          <div className="pt-6">
+          <div className="pt-6 flex justify-center items-center gap-6">
             <Link
               to="/"
-              className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-medium shadow-md hover:shadow-lg"
+              className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition font-medium shadow-md hover:shadow-lg"
             >
               <span className="flex items-center gap-1">
-                <IoArrowBack />
-                Back to All Bills
+                <IoArrowBack /> Back to All Bills
               </span>
             </Link>
+
+            <button
+              onClick={() => setIsModalOpen(true)}
+              disabled={!isCurrentMonth}
+              className={`px-6 py-3 rounded-lg text-white font-medium shadow-md ${
+                isCurrentMonth
+                  ? "bg-green-600 hover:bg-green-700"
+                  : "bg-gray-400 cursor-not-allowed"
+              }`}
+            >
+              Pay Bill
+            </button>
           </div>
+
+          {!isCurrentMonth && (
+            <p className="text-center text-red-500 text-sm mt-2">
+              Only current month bills can be paid.
+            </p>
+          )}
         </div>
       </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <form
+            onSubmit={handlePayBill}
+            className="bg-white rounded-xl p-6 w-11/12 max-w-md space-y-4 shadow-lg"
+          >
+            <h2 className="text-xl font-bold text-center">Pay Bill</h2>
+
+            <input
+              name="email"
+              value={user?.email || ""}
+              readOnly
+              className="border w-full p-2 rounded"
+            />
+            <input
+              name="billId"
+              value={bill._id}
+              readOnly
+              className="border w-full p-2 rounded"
+            />
+            <input
+              name="amount"
+              value={bill.amount}
+              readOnly
+              className="border w-full p-2 rounded"
+            />
+            <input
+              name="name"
+              type="text"
+              className="border w-full p-2 rounded"
+              placeholder="Enter your name"
+              pattern="[A-Za-z.\s]+"
+              title="Please enter letters only"
+              required
+            />
+            <input
+              name="address"
+              placeholder="Enter address"
+              required
+              className="border w-full p-2 rounded"
+            />
+            <input
+              name="phone"
+              placeholder="Enter phone"
+              pattern="[0-9]+"
+              required
+              className="border w-full p-2 rounded"
+            />
+            <input
+              name="date"
+              value={new Date().toLocaleDateString("en-GB")}
+              readOnly
+              className="border w-full p-2 rounded"
+            />
+            <textarea
+              name="additional"
+              placeholder="Additional info (optional)"
+              className="border w-full p-2 rounded"
+            ></textarea>
+
+            <div className="flex justify-between">
+              <button
+                type="button"
+                onClick={() => setIsModalOpen(false)}
+                className="bg-red-500 text-white px-4 py-2 rounded"
+              >
+                Close
+              </button>
+              <button
+                type="submit"
+                className="bg-green-600 text-white px-4 py-2 rounded"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      )}
     </section>
   );
 };

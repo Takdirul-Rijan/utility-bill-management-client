@@ -1,6 +1,6 @@
 import { use, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import Swal from "sweetalert2";
 import { FaEye, FaEyeSlash, FaRegEyeSlash } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
@@ -10,6 +10,10 @@ const Register = () => {
     use(AuthContext);
 
   const navigate = useNavigate();
+
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -42,7 +46,7 @@ const Register = () => {
         });
 
         form.reset();
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -72,7 +76,7 @@ const Register = () => {
           icon: "success",
           draggable: true,
         });
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         // console.log(error);
@@ -93,7 +97,7 @@ const Register = () => {
                 type="text"
                 className="input"
                 placeholder="Enter your name"
-                pattern="[A-Za-z\s]+"
+                pattern="[A-Za-z.\s]+"
                 title="Please enter letters only"
                 required
               />
