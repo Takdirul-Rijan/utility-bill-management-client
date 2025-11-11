@@ -6,6 +6,7 @@ import PrivateRoute from "./PrivateRoute";
 import AuthLayout from "../layout/AuthLayout";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
+import AllBills from "../pages/AllBills";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
         index: true,
         element: <Home></Home>,
         loader: () => fetch("/category.json"),
+      },
+      {
+        path: "/all-bills",
+        element: <AllBills></AllBills>,
       },
       {
         path: "/bill-details/:id",

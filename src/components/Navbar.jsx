@@ -53,7 +53,7 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink
-              to="/bills"
+              to="/all-bills"
               className={({ isActive }) => activeClass(isActive)}
             >
               Bills
@@ -133,7 +133,7 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink
-                  to="/bills"
+                  to="/all-bills"
                   className={({ isActive }) => activeClass(isActive)}
                 >
                   Bills
