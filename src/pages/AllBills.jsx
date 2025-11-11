@@ -7,6 +7,7 @@ const AllBills = () => {
   const [filtered, setFiltered] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   useEffect(() => {
     fetch("http://localhost:3000/all-bills")
@@ -23,11 +24,19 @@ const AllBills = () => {
   }, []);
 
   const handleFilter = (category) => {
+    setSelectedCategory(category);
     if (category === "All") {
       setFiltered(bills);
-    } else {
-      setFiltered(bills.filter((b) => b.category === category));
+      return;
     }
+
+    setLoading(true);
+    fetch(`http://localhost:3000/all-bills?category=${category}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setFiltered(data);
+        setLoading(false);
+      });
   };
 
   if (loading) {
@@ -45,6 +54,7 @@ const AllBills = () => {
 
         <div className="flex justify-center mb-8">
           <select
+            value={selectedCategory}
             onChange={(e) => handleFilter(e.target.value)}
             className="border border-gray-300 rounded-lg px-4 py-2"
           >
