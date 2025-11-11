@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React, { use, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { ScaleLoader } from "react-spinners";
@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { user, loading, logOut } = use(AuthContext);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   const handleLogOut = () => {
     logOut()
@@ -19,6 +20,16 @@ const Navbar = () => {
         });
       })
       .catch((err) => console.error(err));
+  };
+
+  useEffect(() => {
+    const html = document.querySelector("html");
+    html.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const handleTheme = (checked) => {
+    setTheme(checked ? "dark" : "light");
   };
 
   const activeClass = (isActive) =>
@@ -115,6 +126,12 @@ const Navbar = () => {
               </li>
             </>
           )}
+          <input
+            onChange={(e) => handleTheme(e.target.checked)}
+            type="checkbox"
+            defaultChecked={localStorage.getItem("theme") === "dark"}
+            className="toggle"
+          />
         </ul>
 
         <div className="md:hidden">
@@ -190,6 +207,12 @@ const Navbar = () => {
                   </li>
                 </>
               )}
+              <input
+                onChange={(e) => handleTheme(e.target.checked)}
+                type="checkbox"
+                defaultChecked={localStorage.getItem("theme") === "dark"}
+                className="toggle"
+              />
             </ul>
           </details>
         </div>
