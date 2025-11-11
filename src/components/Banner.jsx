@@ -1,127 +1,107 @@
 import React from "react";
+import { Typewriter } from "react-simple-typewriter";
 
 const Banner = () => {
+  const slides = [
+    {
+      id: "slide1",
+      img: "https://assets.jago.com/web-assets/public/blog-202112-bayar-tagihan-internet.jpg",
+      words: [
+        "Stay Connected — Manage Your Internet Bills 🌐",
+        "Pay Your Bills Effortlessly 💻",
+        "Track Your Utilities Anytime ⚡",
+      ],
+      paragraph:
+        "Handle your online service payments with ease and reliability.",
+      prev: "slide4",
+      next: "slide2",
+    },
+    {
+      id: "slide2",
+      img: "https://www.cityofnapa.org/ImageRepository/Document?documentId=9483",
+      words: [
+        "Pay Your Water Bills in One Click 💧",
+        "Track Your Water Usage 💦",
+        "Secure & Fast Water Bill Payments 🚰",
+      ],
+      paragraph:
+        "Manage all your monthly water usage and bills securely online.",
+      prev: "slide1",
+      next: "slide3",
+    },
+    {
+      id: "slide3",
+      img: "https://thumbs.dreamstime.com/b/monthly-gas-payment-online-mobile-phone-app-paying-utility-bills-vector-illustration-cartoon-isolated-meter-readings-280339253.jpg",
+      words: [
+        "Track and Pay Your Gas Bills Effortlessly 🔥",
+        "No More Gas Bill Hassle ⛽",
+        "Monitor Your Gas Usage Anytime 🏠",
+      ],
+      paragraph:
+        "Save time by managing all your gas bills from one secure dashboard.",
+      prev: "slide2",
+      next: "slide4",
+    },
+    {
+      id: "slide4",
+      img: "https://www.originenergy.com.au/blog/wp-content/uploads/10-easy-ways-to-reduce-your-energy-bill-Blog-banner-1600x900-1-scaled.jpg",
+      words: [
+        "Manage Your Electricity Bills Easily ⚡",
+        "Stay Updated on Your Power Usage 🔌",
+        "Never Miss a Due Date Again 🕒",
+      ],
+      paragraph:
+        "Stay updated, track payments, and never miss a due date again.",
+      prev: "slide3",
+      next: "slide1",
+    },
+  ];
+
   return (
-    <div className="carousel w-full h-[80vh] md:h-[90vh]] rounded-lg overflow-hidden shadow-lg">
-      <div id="slide1" className="carousel-item relative w-full">
-        <img
-          src="https://assets.jago.com/web-assets/public/blog-202112-bayar-tagihan-internet.jpg"
-          className="w-full h-full object-center"
-          alt="Internet Bill"
-        />
-        <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center text-white px-5">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-3">
-            Stay Connected — Manage Your Internet Bills 🌐
-          </h2>
-          <p className="max-w-xl text-sm sm:text-base md:text-lg">
-            Handle your online service payments with ease and reliability.
-          </p>
+    <div className="carousel w-full h-[80vh] md:h-[90vh] rounded-lg overflow-hidden shadow-lg">
+      {slides.map((slide) => (
+        <div
+          key={slide.id}
+          id={slide.id}
+          className="carousel-item relative w-full"
+        >
+          <img
+            src={slide.img}
+            className="w-full h-full object-center"
+            alt={slide.id}
+          />
+          <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center text-white px-5">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-3">
+              <Typewriter
+                words={slide.words}
+                loop={true}
+                cursor
+                cursorStyle="|"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={2000}
+              />
+            </h2>
+            <p className="max-w-xl text-sm sm:text-base md:text-lg">
+              {slide.paragraph}
+            </p>
+          </div>
+          <div className="absolute left-2 right-2 sm:left-5 sm:right-5 top-1/2 flex -translate-y-1/2 justify-between">
+            <a
+              href={`#${slide.prev}`}
+              className="btn btn-circle bg-white/60 hover:bg-white text-gray-800 border-none"
+            >
+              ❮
+            </a>
+            <a
+              href={`#${slide.next}`}
+              className="btn btn-circle bg-white/60 hover:bg-white text-gray-800 border-none"
+            >
+              ❯
+            </a>
+          </div>
         </div>
-        <div className="absolute left-2 right-2 sm:left-5 sm:right-5 top-1/2 flex -translate-y-1/2 justify-between">
-          <a
-            href="#slide4"
-            className="btn btn-circle bg-white/60 hover:bg-white text-gray-800 border-none"
-          >
-            ❮
-          </a>
-          <a
-            href="#slide2"
-            className="btn btn-circle bg-white/60 hover:bg-white text-gray-800 border-none"
-          >
-            ❯
-          </a>
-        </div>
-      </div>
-
-      <div id="slide2" className="carousel-item relative w-full">
-        <img
-          src="https://www.cityofnapa.org/ImageRepository/Document?documentId=9483"
-          className="w-full h-full object-center"
-          alt="Water Bill"
-        />
-        <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center text-white px-5">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-3">
-            Pay Your Water Bills in One Click 💧
-          </h2>
-          <p className="max-w-xl text-sm sm:text-base md:text-lg">
-            Manage all your monthly water usage and bills securely online.
-          </p>
-        </div>
-        <div className="absolute left-2 right-2 sm:left-5 sm:right-5 top-1/2 flex -translate-y-1/2 justify-between">
-          <a
-            href="#slide1"
-            className="btn btn-circle bg-white/60 hover:bg-white text-gray-800 border-none"
-          >
-            ❮
-          </a>
-          <a
-            href="#slide3"
-            className="btn btn-circle bg-white/60 hover:bg-white text-gray-800 border-none"
-          >
-            ❯
-          </a>
-        </div>
-      </div>
-
-      <div id="slide3" className="carousel-item relative w-full">
-        <img
-          src="https://thumbs.dreamstime.com/b/monthly-gas-payment-online-mobile-phone-app-paying-utility-bills-vector-illustration-cartoon-isolated-meter-readings-280339253.jpg"
-          className="w-full h-full object-center"
-          alt="Gas Bill"
-        />
-        <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center text-white px-5">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-3">
-            Track and Pay Your Gas Bills Effortlessly 🔥
-          </h2>
-          <p className="max-w-xl text-sm sm:text-base md:text-lg">
-            Save time by managing all your gas bills from one secure dashboard.
-          </p>
-        </div>
-        <div className="absolute left-2 right-2 sm:left-5 sm:right-5 top-1/2 flex -translate-y-1/2 justify-between">
-          <a
-            href="#slide2"
-            className="btn btn-circle bg-white/60 hover:bg-white text-gray-800 border-none"
-          >
-            ❮
-          </a>
-          <a
-            href="#slide4"
-            className="btn btn-circle bg-white/60 hover:bg-white text-gray-800 border-none"
-          >
-            ❯
-          </a>
-        </div>
-      </div>
-
-      <div id="slide4" className="carousel-item relative w-full">
-        <img
-          src="https://www.originenergy.com.au/blog/wp-content/uploads/10-easy-ways-to-reduce-your-energy-bill-Blog-banner-1600x900-1-scaled.jpg"
-          className="w-full h-full object-center"
-          alt="Electricity Bill"
-        />
-        <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center text-white px-5">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-3">
-            Manage Your Electricity Bills Easily ⚡
-          </h2>
-          <p className="max-w-xl text-sm sm:text-base md:text-lg">
-            Stay updated, track payments, and never miss a due date again.
-          </p>
-        </div>
-        <div className="absolute left-2 right-2 sm:left-5 sm:right-5 top-1/2 flex -translate-y-1/2 justify-between">
-          <a
-            href="#slide3"
-            className="btn btn-circle bg-white/60 hover:bg-white text-gray-800 border-none"
-          >
-            ❮
-          </a>
-          <a
-            href="#slide1"
-            className="btn btn-circle bg-white/60 hover:bg-white text-gray-800 border-none"
-          >
-            ❯
-          </a>
-        </div>
-      </div>
+      ))}
     </div>
   );
 };
