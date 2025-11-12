@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 
 const ContactUs = () => {
+  useEffect(() => {
+    document.title = "Contact Us";
+  }, []);
   const handleSendMessage = (e) => {
     e.preventDefault();
     Swal.fire({

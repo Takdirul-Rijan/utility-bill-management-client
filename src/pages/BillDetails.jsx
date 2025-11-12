@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import { CiLocationOn } from "react-icons/ci";
 import { FaSackDollar } from "react-icons/fa6";
 import { IoArrowBack } from "react-icons/io5";
@@ -47,13 +47,17 @@ const BillDetails = () => {
       });
   };
 
+  useEffect(() => {
+    document.title = bill.title;
+  }, [bill.title]);
+
   return (
     <section className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-12 px-4 md:px-10">
       <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
         <div className="h-[300px] md:h-[450px] w-full overflow-hidden">
           <img
             src={bill.image}
-            alt={bill.title}
+            alt=""
             className="w-full h-full object-center"
           />
         </div>

@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router";
 
 const Error = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+    document.title = "Error - 404";
+  }, []);
   return (
     <section className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-pink-100 via-purple-100 to-blue-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-950 transition-all duration-300 px-6 text-center">
       <h1 className="text-9xl font-extrabold text-pink-500 dark:text-pink-400 animate-bounce">

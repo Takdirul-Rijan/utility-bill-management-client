@@ -1,4 +1,4 @@
-import { use, useState } from "react";
+import { use, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link, Navigate, useLocation, useNavigate } from "react-router";
 import Swal from "sweetalert2";
@@ -78,69 +78,92 @@ const Login = () => {
       });
   };
 
+  useEffect(() => {
+    document.title = "Login";
+  }, []);
+
   return (
-    <div className="flex justify-center min-h-screen items-center">
-      <title>Login</title>
-      <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl py-5">
-        <h2 className="font-bold text-xl text-center">Login Your Account</h2>
+    <div className="flex justify-center items-center min-h-screen px-4">
+      <div className="w-full max-w-md bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8 space-y-6 backdrop-blur-md">
+        <h2 className="font-bold text-3xl text-center text-blue-700 dark:text-blue-400">
+          Login to SmartBillHub
+        </h2>
+        <p className="text-center text-gray-600 dark:text-gray-300 text-sm">
+          Welcome back! Please login to your account.
+        </p>
+
         <form onSubmit={handleLogIn}>
-          <div className="card-body">
-            <fieldset className="fieldset">
-              <label className="label">Email</label>
+          <div className="space-y-5">
+            <div>
+              <label className="block text-sm font-medium mb-1">Email</label>
               <input
                 name="email"
                 type="email"
-                className="input"
-                placeholder="Email"
+                className="w-full p-3 rounded-xl bg-gray-100 dark:bg-gray-700 dark:text-white border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-400 outline-none"
+                placeholder="Enter your email"
                 required
                 value={emailPrefill}
                 onChange={(e) => setEmailPrefill(e.target.value)}
               />
-              <label className="label">Password</label>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-1">Password</label>
               <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
                   name="password"
-                  className="input"
-                  placeholder="Password"
+                  className="w-full p-3 rounded-xl bg-gray-100 dark:bg-gray-700 dark:text-white border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-400 outline-none"
+                  placeholder="Enter your password"
                   required
                 />
                 <button
                   type="button"
                   onClick={handleToggleShowPassword}
-                  className=" btn-xs absolute top-3.5 right-7 "
+                  className="absolute top-3 right-4 text-gray-500 hover:text-blue-600"
                 >
                   {showPassword ? <FaEye /> : <FaEyeSlash />}
                 </button>
               </div>
+            </div>
+
+            <div className="flex justify-end">
               <Link
-                to="/auth/forgot-password"
                 state={{ email: emailPrefill }}
-                className="link link-hover"
+                className="text-sm text-blue-500 hover:underline"
               >
                 Forgot password?
               </Link>
+            </div>
 
-              <button type="submit" className="btn btn-primary mt-4">
-                Login
-              </button>
-            </fieldset>
+            <button
+              type="submit"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl transition shadow-md hover:shadow-lg"
+            >
+              Login
+            </button>
           </div>
         </form>
-        <div className="flex justify-center">
-          <button
-            onClick={handleGoogleLogin}
-            className="btn btn-secondary btn-outline w-[336px]"
-          >
-            <FcGoogle size={20} /> Login with Google
-          </button>
+
+        <div className="flex justify-center items-center gap-2">
+          <div className="h-[1px] bg-gray-300 w-1/4"></div>
+          <p className="text-sm text-gray-500 dark:text-gray-400">or</p>
+          <div className="h-[1px] bg-gray-300 w-1/4"></div>
         </div>
-        <p className="pt-5 text-center font-semibold">
+
+        <button
+          onClick={handleGoogleLogin}
+          className="w-full flex items-center justify-center gap-2 border border-gray-300 dark:border-gray-600 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition font-semibold text-gray-700 dark:text-gray-200"
+        >
+          <FcGoogle size={20} /> Login with Google
+        </button>
+
+        <p className="text-center text-gray-700 dark:text-gray-300 font-medium pt-3">
           New to our platform?{" "}
           <Link
             to={"/auth/register"}
             state={{ from: location.state?.from || "/" }}
-            className="text-blue-400"
+            className="text-blue-500 hover:underline"
           >
             Register
           </Link>

@@ -10,6 +10,10 @@ const AllBills = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   useEffect(() => {
+    document.title = "Bills";
+  }, []);
+
+  useEffect(() => {
     fetch("http://localhost:3000/all-bills")
       .then((res) => res.json())
       .then((data) => {

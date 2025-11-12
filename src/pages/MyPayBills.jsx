@@ -13,6 +13,7 @@ const MyPayBills = () => {
   useEffect(() => {
     const myBills = () => {
       // console.log(user?.email);
+      document.title = "My Pay Bills";
 
       fetch(`http://localhost:3000/my-bills?email=${user.email}`)
         .then((res) => res.json())
@@ -127,7 +128,7 @@ const MyPayBills = () => {
 
       <button
         onClick={downloadPDF}
-        className="mb-4 px-4 py-2 bg-blue-600 text-white rounded"
+        className="mb-4 px-4 py-2 bg-blue-600 hover:bg-amber-600 text-white rounded"
       >
         Download Report
       </button>
