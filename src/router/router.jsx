@@ -8,6 +8,8 @@ import Register from "../pages/Register";
 import Login from "../pages/Login";
 import AllBills from "../pages/AllBills";
 import MyPayBills from "../pages/MyPayBills";
+import Contact from "../pages/ContactUs";
+import ContactUs from "../pages/ContactUs";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +42,10 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:3000/bills/${params.id}`),
+      },
+      {
+        path: "/contact-us",
+        element: <ContactUs></ContactUs>,
       },
     ],
   },
