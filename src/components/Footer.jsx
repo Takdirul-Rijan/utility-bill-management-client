@@ -73,7 +73,7 @@ const Footer = () => {
                   href="/contact-us"
                   className="hover:text-blue-500 dark:hover:text-blue-400 transition"
                 >
-                  Contact
+                  Contact Us
                 </a>
               </li>
             </ul>

@@ -8,7 +8,6 @@ import Register from "../pages/Register";
 import Login from "../pages/Login";
 import AllBills from "../pages/AllBills";
 import MyPayBills from "../pages/MyPayBills";
-import Contact from "../pages/ContactUs";
 import ContactUs from "../pages/ContactUs";
 
 const router = createBrowserRouter([
