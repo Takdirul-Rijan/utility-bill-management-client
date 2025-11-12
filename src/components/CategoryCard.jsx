@@ -3,7 +3,7 @@ import { useLoaderData } from "react-router";
 
 const CategoryCard = () => {
   const categories = useLoaderData("/category.json");
-  // console.log(categories);
+  // console.log("all categories", categories);
 
   return (
     <section className="py-12 bg-gray-50">
