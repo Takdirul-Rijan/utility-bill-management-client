@@ -8,6 +8,7 @@ import Register from "../pages/Register";
 import Login from "../pages/Login";
 import AllBills from "../pages/AllBills";
 import MyPayBills from "../pages/MyPayBills";
+import Error from "../pages/Error";
 import ContactUs from "../pages/ContactUs";
 
 const router = createBrowserRouter([
@@ -64,7 +65,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/*",
-    element: <h2>Error 404</h2>,
+    element: <Error></Error>,
   },
 ]);
 export default router;
