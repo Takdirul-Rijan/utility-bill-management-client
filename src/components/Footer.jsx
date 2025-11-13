@@ -1,8 +1,10 @@
-import React from "react";
+import React, { use } from "react";
 import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Footer = () => {
+  const { user } = use(AuthContext);
   return (
     <footer
       className="bg-gradient-to-br from-blue-200 via-indigo-100 to-purple-100
@@ -38,14 +40,16 @@ const Footer = () => {
                     Home
                   </a>
                 </li>
-                <li>
-                  <a
-                    href="/auth/login"
-                    className="hover:text-blue-500 dark:hover:text-blue-400 transition"
-                  >
-                    Login
-                  </a>
-                </li>
+                {!user && (
+                  <li>
+                    <a
+                      href="/auth/login"
+                      className="hover:text-blue-500 dark:hover:text-blue-400 transition"
+                    >
+                      Login
+                    </a>
+                  </li>
+                )}
                 <li>
                   <a
                     href="/all-bills"
@@ -54,14 +58,16 @@ const Footer = () => {
                     All Bills
                   </a>
                 </li>
-                <li>
-                  <a
-                    href="/auth/register"
-                    className="hover:text-blue-500 dark:hover:text-blue-400 transition"
-                  >
-                    Register
-                  </a>
-                </li>
+                {!user && (
+                  <li>
+                    <a
+                      href="/auth/register"
+                      className="hover:text-blue-500 dark:hover:text-blue-400 transition"
+                    >
+                      Register
+                    </a>
+                  </li>
+                )}
                 <li>
                   <a
                     href="/my-pay-bills"
