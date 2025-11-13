@@ -15,7 +15,9 @@ const MyPayBills = () => {
       // console.log(user?.email);
       document.title = "My Pay Bills";
 
-      fetch(`http://localhost:3000/my-bills?email=${user.email}`)
+      fetch(
+        `https://smart-bill-hub-server.vercel.app/my-bills?email=${user.email}`
+      )
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);
@@ -37,18 +39,23 @@ const MyPayBills = () => {
     };
     // console.log(updatedBill);
 
-    fetch(`http://localhost:3000/my-bills/${modalBill._id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updatedBill),
-    })
+    fetch(
+      `https://smart-bill-hub-server.vercel.app/my-bills/${modalBill._id}`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedBill),
+      }
+    )
       .then((res) => res.json())
       .then(() => {
         Swal.fire("Your bill has been updated!");
 
         setModalBill(null);
 
-        fetch(`http://localhost:3000/my-bills?email=${user.email}`)
+        fetch(
+          `https://smart-bill-hub-server.vercel.app/my-bills?email=${user.email}`
+        )
           .then((res) => res.json())
           .then((data) => {
             // console.log("bills after update:", data);
@@ -68,7 +75,9 @@ const MyPayBills = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/my-bills/${id}`, { method: "DELETE" })
+        fetch(`https://smart-bill-hub-server.vercel.app/my-bills/${id}`, {
+          method: "DELETE",
+        })
           .then((res) => res.json())
           .then(() => {
             Swal.fire({
@@ -77,7 +86,9 @@ const MyPayBills = () => {
               icon: "success",
             });
 
-            fetch(`http://localhost:3000/my-bills?email=${user.email}`)
+            fetch(
+              `https://smart-bill-hub-server.vercel.app/my-bills?email=${user.email}`
+            )
               .then((res) => res.json())
               .then((data) => {
                 // console.log("after delete bills", data);

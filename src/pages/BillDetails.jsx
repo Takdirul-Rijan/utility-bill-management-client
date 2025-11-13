@@ -34,7 +34,7 @@ const BillDetails = () => {
       additional: form.additional.value,
     };
 
-    fetch("http://localhost:3000/myBills", {
+    fetch("https://smart-bill-hub-server.vercel.app/myBills", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(billData),

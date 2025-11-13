@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCZeEbRWzmMs-Ko0zRyK_Z_FcP5-aLwKh0",
-  authDomain: "smartbillhub.firebaseapp.com",
-  projectId: "smartbillhub",
-  storageBucket: "smartbillhub.firebasestorage.app",
-  messagingSenderId: "31923356383",
-  appId: "1:31923356383:web:6767aa58ef9231d2785f6a",
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase

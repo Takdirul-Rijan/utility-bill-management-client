@@ -7,7 +7,7 @@ const RecentBills = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3000/bills")
+    fetch("https://smart-bill-hub-server.vercel.app/bills")
       .then((res) => res.json())
       .then((data) => {
         setBills(data);
@@ -27,7 +27,9 @@ const RecentBills = () => {
     <div>
       <section className="py-12 bg-gray-100">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8">Recent Bills</h2>
+          <h2 className="text-3xl font-bold text-center mb-8 text-orange-500">
+            Recent Bills
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {bills.map((bill) => (
               <BillsCard key={bill._id} bill={bill}></BillsCard>

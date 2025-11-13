@@ -1,4 +1,5 @@
 import React from "react";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { Typewriter } from "react-simple-typewriter";
 
 const Banner = () => {
@@ -31,7 +32,7 @@ const Banner = () => {
     },
     {
       id: "slide3",
-      img: "https://thumbs.dreamstime.com/b/monthly-gas-payment-online-mobile-phone-app-paying-utility-bills-vector-illustration-cartoon-isolated-meter-readings-280339253.jpg",
+      img: "https://cdni.iconscout.com/illustration/premium/thumb/payment-of-gas-bill-online-illustration-svg-download-png-9404797.png",
       words: [
         "Track and Pay Your Gas Bills Effortlessly 🔥",
         "No More Gas Bill Hassle ⛽",
@@ -91,13 +92,13 @@ const Banner = () => {
               href={`#${slide.prev}`}
               className="btn btn-circle bg-white/60 hover:bg-white text-gray-800 border-none"
             >
-              ❮
+              <IoIosArrowBack size={24}></IoIosArrowBack>
             </a>
             <a
               href={`#${slide.next}`}
               className="btn btn-circle bg-white/60 hover:bg-white text-gray-800 border-none"
             >
-              ❯
+              <IoIosArrowForward size={24}></IoIosArrowForward>
             </a>
           </div>
         </div>

@@ -41,7 +41,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/bills/${params.id}`),
+          fetch(`https://smart-bill-hub-server.vercel.app/bills/${params.id}`),
       },
       {
         path: "/contact-us",

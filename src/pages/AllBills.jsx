@@ -14,7 +14,7 @@ const AllBills = () => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3000/all-bills")
+    fetch("https://smart-bill-hub-server.vercel.app/all-bills")
       .then((res) => res.json())
       .then((data) => {
         setBills(data);
@@ -35,7 +35,9 @@ const AllBills = () => {
     }
 
     setLoading(true);
-    fetch(`http://localhost:3000/all-bills?category=${category}`)
+    fetch(
+      `https://smart-bill-hub-server.vercel.app/all-bills?category=${category}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setFiltered(data);
