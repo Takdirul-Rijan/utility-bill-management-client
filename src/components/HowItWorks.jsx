@@ -9,7 +9,7 @@ const HowItWorks = () => {
       .then((data) => setSteps(data));
   }, []);
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="w-11/12 mx-auto py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-orange-500">
           How It Works

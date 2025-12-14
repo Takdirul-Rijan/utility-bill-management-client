@@ -59,51 +59,53 @@ const Banner = () => {
   ];
 
   return (
-    <div className="carousel w-full h-[80vh] md:h-[90vh] rounded-lg overflow-hidden shadow-lg">
-      {slides.map((slide) => (
-        <div
-          key={slide.id}
-          id={slide.id}
-          className="carousel-item relative w-full"
-        >
-          <img
-            src={slide.img}
-            className="w-full h-full object-center"
-            alt={slide.id}
-          />
-          <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center text-white px-5">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-3">
-              <Typewriter
-                words={slide.words}
-                loop={true}
-                cursor
-                cursorStyle="|"
-                typeSpeed={70}
-                deleteSpeed={50}
-                delaySpeed={2000}
-              />
-            </h2>
-            <p className="max-w-xl text-sm sm:text-base md:text-lg">
-              {slide.paragraph}
-            </p>
+    <section className="w-11/12 mx-auto pt-8 pb-5 bg-gray-50">
+      <div className="carousel w-full max-h-[520px] h-[55vh] md:h-[60vh]">
+        {slides.map((slide) => (
+          <div
+            key={slide.id}
+            id={slide.id}
+            className="carousel-item relative w-full"
+          >
+            <img
+              src={slide.img}
+              className="w-full h-full object-center"
+              alt={slide.id}
+            />
+            <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center text-white px-5">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-3">
+                <Typewriter
+                  words={slide.words}
+                  loop={true}
+                  cursor
+                  cursorStyle="|"
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={2000}
+                />
+              </h2>
+              <p className="max-w-xl text-sm sm:text-base md:text-lg">
+                {slide.paragraph}
+              </p>
+            </div>
+            <div className="absolute left-2 right-2 sm:left-5 sm:right-5 top-1/2 flex -translate-y-1/2 justify-between">
+              <a
+                href={`#${slide.prev}`}
+                className="btn btn-circle bg-white/60 hover:bg-white text-gray-800 border-none"
+              >
+                <IoIosArrowBack size={24}></IoIosArrowBack>
+              </a>
+              <a
+                href={`#${slide.next}`}
+                className="btn btn-circle bg-white/60 hover:bg-white text-gray-800 border-none"
+              >
+                <IoIosArrowForward size={24}></IoIosArrowForward>
+              </a>
+            </div>
           </div>
-          <div className="absolute left-2 right-2 sm:left-5 sm:right-5 top-1/2 flex -translate-y-1/2 justify-between">
-            <a
-              href={`#${slide.prev}`}
-              className="btn btn-circle bg-white/60 hover:bg-white text-gray-800 border-none"
-            >
-              <IoIosArrowBack size={24}></IoIosArrowBack>
-            </a>
-            <a
-              href={`#${slide.next}`}
-              className="btn btn-circle bg-white/60 hover:bg-white text-gray-800 border-none"
-            >
-              <IoIosArrowForward size={24}></IoIosArrowForward>
-            </a>
-          </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

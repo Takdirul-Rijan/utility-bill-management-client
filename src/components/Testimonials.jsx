@@ -9,7 +9,7 @@ const Testimonials = () => {
       .then((data) => setReviews(data));
   }, []);
   return (
-    <section className="py-12 bg-gradient-to-r from-indigo-50 to-purple-50">
+    <section className="w-11/12 mx-auto py-12 bg-gradient-to-r from-indigo-50 to-purple-50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-8 text-orange-500">
           What Users Say

@@ -54,7 +54,7 @@ const AllBills = () => {
   }
 
   return (
-    <section className="py-12 bg-gray-100">
+    <section className="w-11/12 mx-auto py-12 bg-gray-100">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-8">All Bills</h2>
 

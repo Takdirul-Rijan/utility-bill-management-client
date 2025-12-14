@@ -18,3 +18,7 @@
 .btn-primary:hover {
   @apply opacity-90;
 }
+
+body {
+  background-color: #f5f7ff !important;
+}

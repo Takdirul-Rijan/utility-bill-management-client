@@ -29,7 +29,7 @@ const router = createBrowserRouter([
         path: "/my-pay-bills",
         element: (
           <PrivateRoute>
-            <MyPayBills></MyPayBills>,
+            <MyPayBills></MyPayBills>
           </PrivateRoute>
         ),
       },

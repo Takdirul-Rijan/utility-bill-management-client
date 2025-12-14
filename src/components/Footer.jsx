@@ -7,7 +7,7 @@ const Footer = () => {
   const { user } = use(AuthContext);
   return (
     <footer
-      className="bg-gradient-to-br from-blue-200 via-indigo-100 to-purple-100
+      className="w-11/12 mx-auto bg-gradient-to-br from-blue-200 via-indigo-100 to-purple-100
       dark:from-gray-900 dark:via-indigo-900 dark:to-gray-950
       text-gray-700 dark:text-gray-300 transition-all duration-300 mt-0 mx-auto"
     >
