@@ -45,7 +45,7 @@ const Navbar = () => {
     );
   }
   return (
-    <header className="w-11/12 mx-auto bg-lime-400 shadow-md py-3 sticky top-0 z-50">
+    <header className="w-11/12 mx-auto bg-gray-100 shadow-md py-3 sticky top-0 z-50">
       <nav className="w-11/12 mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2">
           <div className="w-10 h-10 bg-indigo-500 flex items-center justify-center rounded-md text-white font-bold">
